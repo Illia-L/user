@@ -1,0 +1,76 @@
+/* path: tokens.css
+  App Palette — anchored to brand #284b63
+  Hover/active use consistent 15%/30% darken steps
+*/
+
+:root {
+  /* Neutrals / Surfaces */
+  --color-bg: #f7f9fb;
+  --color-surface: #ffffff;
+  --color-surface2: #f2f6f9;
+  --color-surface3: #e6edf3;
+
+  /* Text */
+  --color-text: #0f1f2e;
+  --color-text-muted: #5b6b79;
+
+  /* Lines & States */
+  --color-border: #d4dee6;
+  --color-disabled-bg: #eef2f5;
+  --color-disabled-text: #6b7b88;
+  --color-disabled-border: #d6dee6;
+
+  /* Overlays & Effects */
+  --color-overlay: rgba(15, 31, 46, 0.6);
+  --color-shadow: rgba(15, 31, 46, 0.12);
+  --color-highlight: #e2eef6;
+
+  /* Status */
+  --color-success: #15803d;
+  --color-error: #b91c1c;
+  --color-warning: #b45309;
+  --color-info: #1d4ed8;
+
+  /* Action palette */
+  --color-primary: #284b63;
+  --color-secondary: #3c6e71;
+  --color-accent: #e36414;
+
+  /* Action states (exact 15%/30% toward black) */
+  --color-primary-hover: #224054; /* 15% of #284b63 */
+  --color-primary-hover-bg: rgba(40, 75, 99, 0.15);
+  --color-primary-active: #1c3445; /* 30% of #284b63 */
+  --color-primary-active-bg: rgba(40, 75, 99, 0.3);
+
+  --color-secondary-hover: #335e60; /* 15% of #3c6e71 */
+  --color-secondary-hover-bg: rgba(60, 110, 113, 0.15);
+  --color-secondary-active: #2a4d4f; /* 30% of #3c6e71 */
+  --color-secondary-active-bg: rgba(60, 110, 113, 0.3);
+
+  --color-accent-hover: #c15511; /* 15% of #e36414 */
+  --color-accent-hover-bg: rgba(227, 100, 20, 0.15);
+  --color-accent-active: #9f460e; /* 30% of #e36414 */
+  --color-accent-active-bg: rgba(227, 100, 20, 0.3);
+
+  /* Legibility on fills */
+  --color-on-primary: #ffffff;
+  --color-on-primary-hover: #e6f0f5; /* 15% toward black from white */
+  --color-on-primary-hover-bg: rgba(255, 255, 255, 0.15);
+  --color-on-primary-active: #d0e3eb; /* 30% toward black from white */
+  --color-on-primary-active-bg: rgba(255, 255, 255, 0.3);
+
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-hover: #e6f0f5; /* keep steps consistent with primary */
+  --color-on-secondary-hover-bg: rgba(255, 255, 255, 0.15);
+  --color-on-secondary-active: #d0e3eb;
+  --color-on-secondary-active-bg: rgba(255, 255, 255, 0.3);
+
+  --color-on-accent: #ffffff;
+  --color-on-accent-hover: #fbe8dc; /* 15% accent tint on white (#fff ⟶ mix 15% of #e36414) */
+  --color-on-accent-hover-bg: rgba(255, 255, 255, 0.15);
+  --color-on-accent-active: #f7d1b9; /* 30% accent tint on white (#fff ⟶ mix 30% of #e36414) */
+  --color-on-accent-active-bg: rgba(255, 255, 255, 0.3);
+
+  /* Outlines & Focus */
+  --color-focus-ring: #93c5fd;
+}

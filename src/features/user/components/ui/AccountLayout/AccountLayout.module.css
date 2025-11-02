@@ -1,0 +1,28 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: var(--color-text);
+}
+
+.menu { flex: 0 0 auto; }
+.content { flex: 1 1 auto; min-width: 0; }
+.spacer { display: none; width: 260px; flex: 0 0 260px; }
+
+@media (min-width: 768px) {
+  .wrap { flex-direction: row; }
+  .menu { width: 260px; flex: 0 0 260px; }
+}
+
+@media (min-width: 1024px) {
+  .spacer { display: block; }
+}
+
+/* A11y */
+.srOnly {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}

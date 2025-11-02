@@ -1,0 +1,78 @@
+:root {
+  /* Base 0px (flat) */
+  --_elevation-1-base-0: 0 0px 0px rgba(0, 0, 0, 0);
+  --_elevation-1_5-base-0: 0 0px 0px rgba(0, 0, 0, 0);
+  --_elevation-2-base-0: 0 0px 0px rgba(0, 0, 0, 0);
+  --_elevation-3-base-0: 0 0px 0px rgba(0, 0, 0, 0);
+  --_elevation-4-base-0: 0 0px 0px rgba(0, 0, 0, 0);
+
+  /* Base 1px */
+  --_elevation-1-base-1: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --_elevation-1_5-base-1: 0 1.5px 3px rgba(0, 0, 0, 0.09);
+  --_elevation-2-base-1: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --_elevation-3-base-1: 0 3px 6px rgba(0, 0, 0, 0.11);
+  --_elevation-4-base-1: 0 4px 8px rgba(0, 0, 0, 0.12);
+
+  /* Base 2px */
+  --_elevation-1-base-2: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --_elevation-1_5-base-2: 0 3px 6px rgba(0, 0, 0, 0.09);
+  --_elevation-2-base-2: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --_elevation-3-base-2: 0 6px 12px rgba(0, 0, 0, 0.11);
+  --_elevation-4-base-2: 0 8px 16px rgba(0, 0, 0, 0.12);
+
+  /* Base 3px */
+  --_elevation-1-base-3: 0 3px 6px rgba(0, 0, 0, 0.08);
+  --_elevation-1_5-base-3: 0 4.5px 9px rgba(0, 0, 0, 0.09);
+  --_elevation-2-base-3: 0 6px 12px rgba(0, 0, 0, 0.1);
+  --_elevation-3-base-3: 0 9px 18px rgba(0, 0, 0, 0.11);
+  --_elevation-4-base-3: 0 12px 24px rgba(0, 0, 0, 0.12);
+
+  /* Base 4px */
+  --_elevation-1-base-4: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --_elevation-1_5-base-4: 0 6px 12px rgba(0, 0, 0, 0.09);
+  --_elevation-2-base-4: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --_elevation-3-base-4: 0 12px 24px rgba(0, 0, 0, 0.11);
+  --_elevation-4-base-4: 0 16px 32px rgba(0, 0, 0, 0.12);
+
+  /* Base 5px */
+  --_elevation-1-base-5: 0 5px 10px rgba(0, 0, 0, 0.08);
+  --_elevation-1_5-base-5: 0 7.5px 15px rgba(0, 0, 0, 0.09);
+  --_elevation-2-base-5: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --_elevation-3-base-5: 0 15px 30px rgba(0, 0, 0, 0.11);
+  --_elevation-4-base-5: 0 20px 40px rgba(0, 0, 0, 0.12);
+
+  /* Base 6px */
+  --_elevation-1-base-6: 0 6px 12px rgba(0, 0, 0, 0.08);
+  --_elevation-1_5-base-6: 0 9px 18px rgba(0, 0, 0, 0.09);
+  --_elevation-2-base-6: 0 12px 24px rgba(0, 0, 0, 0.1);
+  --_elevation-3-base-6: 0 18px 36px rgba(0, 0, 0, 0.11);
+  --_elevation-4-base-6: 0 24px 48px rgba(0, 0, 0, 0.12);
+
+  /* Base 7px */
+  --_elevation-1-base-7: 0 7px 14px rgba(0, 0, 0, 0.08);
+  --_elevation-1_5-base-7: 0 10.5px 21px rgba(0, 0, 0, 0.09);
+  --_elevation-2-base-7: 0 14px 28px rgba(0, 0, 0, 0.1);
+  --_elevation-3-base-7: 0 21px 42px rgba(0, 0, 0, 0.11);
+  --_elevation-4-base-7: 0 28px 56px rgba(0, 0, 0, 0.12);
+
+  /* Base 8px */
+  --_elevation-1-base-8: 0 8px 16px rgba(0, 0, 0, 0.08);
+  --_elevation-1_5-base-8: 0 12px 24px rgba(0, 0, 0, 0.09);
+  --_elevation-2-base-8: 0 16px 32px rgba(0, 0, 0, 0.1);
+  --_elevation-3-base-8: 0 24px 48px rgba(0, 0, 0, 0.11);
+  --_elevation-4-base-8: 0 32px 64px rgba(0, 0, 0, 0.12);
+
+  /* Base 9px */
+  --_elevation-1-base-9: 0 9px 18px rgba(0, 0, 0, 0.08);
+  --_elevation-1_5-base-9: 0 13.5px 27px rgba(0, 0, 0, 0.09);
+  --_elevation-2-base-9: 0 18px 36px rgba(0, 0, 0, 0.1);
+  --_elevation-3-base-9: 0 27px 54px rgba(0, 0, 0, 0.11);
+  --_elevation-4-base-9: 0 36px 72px rgba(0, 0, 0, 0.12);
+
+  /* Base 10px */
+  --_elevation-1-base-10: 0 10px 20px rgba(0, 0, 0, 0.08);
+  --_elevation-1_5-base-10: 0 15px 30px rgba(0, 0, 0, 0.09);
+  --_elevation-2-base-10: 0 20px 40px rgba(0, 0, 0, 0.1);
+  --_elevation-3-base-10: 0 30px 60px rgba(0, 0, 0, 0.11);
+  --_elevation-4-base-10: 0 40px 80px rgba(0, 0, 0, 0.12);
+}

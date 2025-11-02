@@ -1,0 +1,46 @@
+/* src/components/account/AccountMenu.module.css */
+.nav {
+  width: 100%;
+  color: var(--color-text);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: block;
+}
+
+.itemWithSpaceBefore {
+  margin-top: 16px;
+}
+
+.logout {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid var(--color-surface3);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: 8px;
+}
+
+.logout:hover {
+  filter: brightness(0.98);
+}
+.logout:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Breakpoints */
+@media (min-width: 768px) {
+  .list {
+    gap: 10px;
+  }
+}

@@ -1,0 +1,12 @@
+/* components/Copyright/Copyright.module.css */
+.copy {
+  font-size: 0.875rem;
+}
+
+.default {
+  color: var(--color-text-muted);
+}
+
+.contrast {
+  color: var(--color-on-primary);
+}

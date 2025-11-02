@@ -1,0 +1,37 @@
+/* components/AppNavLink/AppNavLink.module.css */
+.link {
+  display: flex;
+  align-items: center;
+  height: 100%; /* Full header height */
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.15s ease;
+}
+
+.default {
+  color: var(--color-link);
+}
+.default:hover {
+  color: var(--color-link-hover);
+}
+.default:active {
+  color: var(--color-link-active);
+}
+.default.active {
+  text-decoration: underline;
+}
+
+
+.contrast {
+  color: var(--color-on-primary);
+}
+.contrast:hover {
+  opacity: 0.9;
+}
+.contrast:active {
+  opacity: 0.8;
+}
+.contrast.active {
+  opacity: 1;
+  text-decoration: underline;
+}

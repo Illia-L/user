@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  /* spacing */
+  --u: 8px;
+
+  /* radius */
+  --radius-base: 6px;
+
+  /* elevation */
+  --shadow-1: var(--_elevation-1-base-0);
+  --shadow-1_5: var(--_elevation-1_5-base-0);
+  --shadow-2: var(--_elevation-2-base-0);
+  --shadow-3: var(--_elevation-3-base-0);
+  --shadow-4: var(--_elevation-4-base-0);
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}

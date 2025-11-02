@@ -1,0 +1,308 @@
+.base {
+  all: unset;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  -webkit-tap-highlight-color: transparent;
+
+  border-radius: var(--btn-radius, 0.5rem);
+  border: var(--btn-border-w, 1px) solid var(--btn-border-color, transparent);
+  min-height: var(--btn-h, 2.75rem);
+  /* width: 100%; */
+  padding-inline: var(--btn-px, 1rem);
+  line-height: 1.2;
+  color: var(--btn-text, var(--color-text));
+  background: var(--btn-bg, transparent);
+  box-shadow: 0 1px 2px var(--color-shadow);
+  cursor: pointer;
+  transition: background-color 120ms, border-color 120ms, color 120ms,
+    box-shadow 120ms, transform 34ms;
+}
+
+.base::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.65);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.base:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 3px;
+}
+
+.base[data-contrast='high']:focus-visible {
+  outline-width: 3px;
+}
+
+.base:disabled {
+  cursor: default;
+}
+
+.base:disabled::after,
+.base[aria-busy='true']::after {
+  opacity: 1;
+}
+
+/* sizes */
+.base[data-size='xs'] {
+  --btn-h: 2.25rem;
+  --btn-px: 0.75rem;
+  font-size: 0.875rem;
+}
+.base[data-size='xs']::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-height: 44px;
+  min-width: 44px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  transform: translate(-50%, -50%);
+}
+.base[data-size='sm'] {
+  --btn-h: 2.5rem;
+  --btn-px: 0.875rem;
+  font-size: 0.9375rem;
+}
+.base[data-size='md'] {
+  --btn-h: 2.75rem;
+  --btn-px: 1rem;
+  font-size: 1rem;
+}
+.base[data-size='lg'] {
+  --btn-h: 3rem;
+  --btn-px: 1.125rem;
+  font-size: 1.0625rem;
+}
+.base[data-size='xl'] {
+  --btn-h: 3.25rem;
+  --btn-px: 1.25rem;
+  font-size: 1.0625rem;
+}
+
+/* color roles */
+.base[data-color='primary'] {
+  --fill-bg: var(--color-primary);
+  --fill-bg-hover: var(--color-primary-hover);
+  --fill-bg-active: var(--color-primary-active);
+  --fill-text: var(--color-on-primary);
+  --fill-text-hover: var(--color-on-primary-hover);
+  --fill-text-active: var(--color-on-primary-active);
+
+  --outline-text: var(--color-primary);
+  --outline-text-hover: var(--color-primary-hover);
+  --outline-text-active: var(--color-primary-active);
+  --outline-border: var(--color-primary);
+  --outline-border-hover: var(--color-primary-hover);
+  --outline-border-active: var(--color-primary-active);
+  --outline-bg-hover: var(--color-primary-hover-bg);
+  --outline-bg-active: var(--color-primary-active-bg);
+
+  --link-text: var(--color-primary);
+  --link-text-hover: var(--color-primary-hover);
+  --link-text-active: var(--color-primary-active);
+}
+
+.base[data-color='primary'][data-contrast='high'] {
+  --fill-bg: var(--color-on-primary);
+  --fill-bg-hover: var(--color-on-primary-hover);
+  --fill-bg-active: var(--color-on-primary-active);
+  --fill-text: var(--color-primary);
+  --fill-text-hover: var(--color-primary);
+
+  --outline-text: var(--color-on-primary);
+  --outline-text-hover: var(--color-on-primary-hover);
+  --outline-text-active: var(--color-on-primary-active);
+  --outline-border: var(--color-on-primary);
+  --outline-border-hover: var(--color-on-primary-hover);
+  --outline-border-active: var(--color-on-primary-active);
+  --outline-bg-hover: var(--color-on-primary-hover-bg);
+  --outline-bg-active: var(--color-on-primary-active-bg);
+
+  --link-text: var(--color-on-primary);
+  --link-text-hover: var(--color-on-primary-hover);
+  --link-text-active: var(--color-on-primary-active);
+}
+
+.base[data-color='secondary'] {
+  --fill-bg: var(--color-secondary);
+  --fill-bg-hover: var(--color-secondary-hover);
+  --fill-bg-active: var(--color-secondary-active);
+  --fill-text: var(--color-on-secondary, #fff);
+
+  --outline-bg-active: var(
+    --color-secondary-active-bg,
+    color-mix(in oklab, var(--color-secondary) 30%, transparent)
+  );
+
+  --outline-text: var(--color-secondary);
+  --outline-text-hover: var(--color-secondary-hover);
+  --outline-text-active: var(--color-secondary-active);
+  --outline-border: var(--color-secondary);
+  --outline-border-hover: var(--color-secondary-hover);
+  --outline-border-active: var(--color-secondary-active);
+  --outline-bg-hover: color-mix(
+    in oklab,
+    var(--color-secondary) 15%,
+    transparent
+  );
+  --outline-bg-active: color-mix(
+    in oklab,
+    var(--color-secondary) 30%,
+    transparent
+  );
+
+  --link-text: var(--color-secondary);
+  --link-text-hover: var(--color-secondary-hover);
+  --link-text-active: var(--color-secondary-active);
+}
+
+.base[data-color='secondary'][data-contrast='high'] {
+  --fill-bg: var(--color-on-secondary);
+  --fill-bg-hover: var(--color-on-secondary-hover);
+  --fill-bg-active: var(--color-on-secondary-active);
+  --fill-text: var(--color-secondary);
+
+  --outline-text: var(--color-on-secondary);
+  --outline-text-hover: var(--color-on-secondary-hover);
+  --outline-text-active: var(--color-on-secondary-active);
+  --outline-border: var(--color-on-secondary);
+  --outline-border-hover: var(--color-on-secondary-hover);
+  --outline-border-active: var(--color-on-secondary-active);
+  --outline-bg-hover: var(--color-on-secondary-hover-bg);
+  --outline-bg-active: var(--color-on-secondary-active-bg);
+
+  --link-text: var(--color-on-secondary);
+  --link-text-hover: var(--color-on-secondary-hover);
+  --link-text-active: var(--color-on-secondary-active);
+}
+
+.base[data-color='accent'] {
+  --fill-bg: var(--color-accent);
+  --fill-bg-hover: var(--color-accent-hover);
+  --fill-bg-active: var(--color-accent-active);
+  --fill-text: var(--color-on-accent);
+
+  --outline-text: var(--color-accent);
+  --outline-text-hover: var(--color-accent-hover);
+  --outline-text-active: var(--color-accent-active);
+  --outline-border: var(--color-accent);
+  --outline-border-hover: var(--color-accent-hover);
+  --outline-border-active: var(--color-accent-active);
+  --outline-bg-hover: color-mix(in oklab, var(--color-accent) 15%, transparent);
+  --outline-bg-active: color-mix(
+    in oklab,
+    var(--color-accent) 30%,
+    transparent
+  );
+
+  --link-text: var(--color-accent);
+  --link-text-hover: var(--color-accent-hover);
+  --link-text-active: var(--color-accent-active);
+}
+
+.base[data-color='accent'][data-contrast='high'] {
+  --fill-bg: var(--color-on-accent);
+  --fill-bg-hover: var(--color-on-accent-hover);
+  --fill-bg-active: var(--color-on-accent-active);
+  --fill-text: var(--color-accent);
+
+  --outline-text: var(--color-on-accent);
+  --outline-text-hover: var(--color-on-accent-hover);
+  --outline-text-active: var(--color-on-accent-active);
+  --outline-border: var(--color-on-accent);
+  --outline-border-hover: var(--color-on-accent-hover);
+  --outline-border-active: var(--color-on-accent-active);
+  --outline-bg-hover: var(--color-on-accent-hover-bg);
+  --outline-bg-active: var(--color-on-accent-active-bg);
+
+  --link-text: var(--color-on-accent);
+  --link-text-hover: var(--color-on-accent-hover);
+  --link-text-active: var(--color-on-accent-active);
+}
+
+/* variants */
+.base[data-variant='fill'] {
+  --btn-bg: var(--fill-bg);
+  --btn-text: var(--fill-text);
+  --btn-border-color: transparent;
+}
+.base[data-variant='fill']:not(:disabled):hover {
+  background: var(--fill-bg-hover);
+  color: var(--fill-text-hover, var(--btn-text));
+  box-shadow: 0 2px 6px var(--color-shadow);
+}
+.base[data-variant='fill']:not(:disabled):active {
+  background: var(--fill-bg-active);
+  color: var(--fill-text-active, var(--btn-text));
+  transform: translateY(0.5px);
+}
+
+.base[data-variant='outline'] {
+  --btn-bg: transparent;
+  --btn-text: var(--outline-text);
+  --btn-border-color: var(--outline-border);
+}
+.base[data-variant='outline']:not(:disabled):hover {
+  color: var(--outline-text-hover);
+  border-color: var(--outline-border-hover);
+  background: var(--outline-bg-hover, var(--color-highlight));
+  box-shadow: 0 2px 6px var(--color-shadow);
+}
+.base[data-variant='outline']:not(:disabled):active {
+  color: var(--outline-text-active);
+  border-color: var(--outline-border-active);
+  background: var(--outline-bg-active, var(--color-highlight));
+  transform: translateY(0.5px);
+}
+
+.base[data-variant='link'] {
+  --btn-bg: transparent;
+  --btn-text: var(--link-text);
+  --btn-border-color: transparent;
+  --btn-border-w: 0;
+  padding-inline: 0;
+  box-shadow: none;
+}
+.base[data-variant='link']:not(:disabled):hover {
+  color: var(--link-text-hover);
+  text-underline-offset: 3px;
+}
+.base[data-variant='link']:not(:disabled):active {
+  color: var(--link-text-active);
+}
+
+/* spinner and tap target */
+.spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.25rem solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.xsTap {
+  position: absolute;
+  inset: 0;
+  min-height: 44px;
+  pointer-events: none;
+}
+
+.loading {
+  pointer-events: none;
+}

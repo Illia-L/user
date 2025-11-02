@@ -1,0 +1,12 @@
+/* components/Nav/Nav.module.css */
+.nav {
+  display: flex;
+  gap: calc(var(--u) * 3);
+  height: var(--header-height, 56px); /* Sets overall header height */
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
+}
