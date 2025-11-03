@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import styles from './UserWidget.module.css';
 import { useLocation } from 'react-router';
 import { AppLink } from '../../../../components/AppLink/AppLink';
-import { useAppSelector } from '../../../../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../../../redux/hooks';
 import { selectIsLoggedIn, selectName } from '../../redux/selectors';
+import { refresh } from '../../redux/operations';
 
 interface UserWidgetProps {
   className?: string;
@@ -17,6 +18,11 @@ export const UserWidget: React.FC<UserWidgetProps> = ({ className }) => {
   const userName = useAppSelector(selectName);
   const location = useLocation();
   const { pathname } = location;
+  const dispatch = useAppDispatch()
+
+  useEffect(()=>{
+    dispatch(refresh())
+  },[dispatch])
 
   return (
     <div className={clsx(styles.userWidget, className)}>

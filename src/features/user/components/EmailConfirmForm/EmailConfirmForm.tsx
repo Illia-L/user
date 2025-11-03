@@ -19,11 +19,11 @@ import {
 } from '../../utils/defaults';
 import {
   confirmEmail,
-  type ConfirmEmailRequest,
   type FormValidationErrorValue,
 } from '../../redux/operations';
 import { useAppDispatch } from '../../../../redux/hooks';
 import type { UserFormFields } from '../../types/fields';
+import type { ConfirmEmailRequestBody } from '../../api';
 
 type Props = {
   email: string;
@@ -60,7 +60,7 @@ export default function EmailConfirmForm({
     if (Number.isNaN(code))
       return setError('code', { message: 'Code must be a number' });
 
-    const payload: ConfirmEmailRequest = {
+    const payload: ConfirmEmailRequestBody = {
       code,
       email,
       rememberMe: rememberMe ? 1 : 0,

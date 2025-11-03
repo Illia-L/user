@@ -1,6 +1,8 @@
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://zoshyt.online/api/users';
+axios.defaults.headers.post['Accept'] = 'application/json'
+axios.defaults.headers.patch['Accept'] = 'application/json'
 
 type AuthenticationResponseBody = {
   user_id: number;

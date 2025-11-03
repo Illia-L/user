@@ -1,24 +1,18 @@
-// components/Footer/Footer.tsx
 import React from 'react';
 import clsx from 'clsx';
-import styles from './Footer.module.css';
+import css from './Footer.module.css';
 import { Copyright } from '../Copyright/Copyright';
-import type { Theme } from '../../../types/theme';
 
 interface FooterProps {
-  theme?: Theme;
   className?: string;
 }
 
-export const Footer: React.FC<FooterProps> = ({
-  theme = 'default',
-  className,
-}) => {
+export const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
-    <footer className={clsx(styles.footer, styles[theme], className)}>
+    <footer className={clsx(css.footer, css.default, className)}>
       <div className='container'>
-        <div className={styles.row}>
-          <Copyright theme={theme} />
+        <div className={css.row}>
+          <Copyright />
         </div>
       </div>
     </footer>

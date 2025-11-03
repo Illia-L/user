@@ -5,22 +5,20 @@ import css from './Header.module.css';
 // import { Logo } from '../Logo';
 import { Nav } from '../Nav/Nav';
 import { UserWidget } from '../../../features/user/components/UserWidget/UserWidget';
-import type { Theme } from '../../../types/theme';
 // import { MenuButton } from '../MenuButton';
 
 interface HeaderProps {
-  theme?: Theme;
   className?: string;
 }
 
-export const Header: React.FC<HeaderProps> = ({ theme = 'default', className }) => {
+export const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
-    <header className={clsx(css.header, css[theme], className)}>
-      <div className="container">
+    <header className={clsx(css.header, css.default, className)}>
+      <div className='container'>
         <div className={css.row}>
           {/* <Logo /> */}
-          <Nav theme={theme} />
-          <UserWidget theme={theme} />
+          <Nav />
+          <UserWidget />
           {/* <MenuButton /> */}
         </div>
       </div>

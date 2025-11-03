@@ -2,7 +2,6 @@ import { useState } from 'react';
 import ResendCode from '../../components/ResendCode/ResendCode';
 import type { EmailConfirmBlockError } from '../../utils/defaults';
 import css from './ResetPasswordPage.module.css';
-import ForgotPasswordForm from '../../components/ForgotPasswordForm/ForgotPasswordForm';
 import { useAppSelector } from '../../../../redux/hooks';
 import { selectEmail } from '../../redux/selectors';
 import ResetPasswordForm from '../../components/ResetPasswordForm/ResetPasswordForm';

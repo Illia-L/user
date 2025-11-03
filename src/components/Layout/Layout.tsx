@@ -1,4 +1,3 @@
-// components/Layout/Layout.tsx
 import React, { type PropsWithChildren } from 'react';
 import { Header } from '../header/Header/Header';
 import { Footer } from '../footer/Footer/Footer';
@@ -10,19 +9,16 @@ interface LayoutProps extends PropsWithChildren {
   theme?: LayoutTheme;
 }
 
-export const Layout: React.FC<LayoutProps> = ({
-  theme = 'default',
-  children,
-}) => {
+export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className={css.app}>
-      <Header theme={theme} />
+      <Header />
 
       <main className={css.main}>
         <div className='container'>{children}</div>
       </main>
 
-      <Footer theme={theme} />
+      <Footer />
     </div>
   );
 };

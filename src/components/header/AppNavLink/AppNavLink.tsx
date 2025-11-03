@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import styles from './AppNavLink.module.css';
+import css from './AppNavLink.module.css';
 import { NavLink } from 'react-router';
 
 interface NavLinkProps {
@@ -18,7 +18,7 @@ export const AppNavLink: React.FC<NavLinkProps> = ({
     <NavLink
       to={to}
       className={({ isActive }) =>
-        clsx(styles.link, { [styles.active]: isActive }, className)
+        clsx(css.link, css.default, { [css.active]: isActive }, className)
       }
     >
       {children}
