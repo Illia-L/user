@@ -8,6 +8,9 @@ import NotLoggedInRoute from '../NotLoggedInRoute/NotLoggedInRoute';
 import ForgotPasswordForm from '../ForgotPasswordForm/ForgotPasswordForm';
 import ResetPasswordPage from '../../pages/ResetPasswordPage.tsx/ResetPasswordPage';
 import LoginForm from '../LoginForm/LoginForm';
+import LoggedInLayout from '../ui/LoggedInLayout/LoggedInLayout';
+import ConfirmNewEmailForm from '../ConfirmNewEmailForm/ConfirmNewEmailForm';
+import ChangeEmailForm from '../ChangeEmailForm/ChangeEmailForm';
 
 export default function Account() {
   return (
@@ -40,20 +43,28 @@ export default function Account() {
           />
         </Route>
 
-        <Route
-          path='change-data'
-          element={<ChangeDataForm />}
-        />
-
-        <Route
-          path='change-password'
-          element={<ChangePasswordForm />}
-        />
-
-        <Route
-          path='*'
-          element={<p>User 404 here</p>}
-        />
+        <Route element={<LoggedInLayout/>}>
+          <Route
+            path='change-data'
+            element={<ChangeDataForm />}
+          />
+          <Route
+            path='change-password'
+            element={<ChangePasswordForm />}
+          />
+          <Route
+            path='change-email'
+            element={<ChangeEmailForm />}
+          />
+          <Route
+            path='confirm-new-email'
+            element={<ConfirmNewEmailForm />}
+          />
+          <Route
+            path='*'
+            element={<p>User 404 here</p>}
+          />
+        </Route>
       </Routes>
     </AccountLayout>
   );

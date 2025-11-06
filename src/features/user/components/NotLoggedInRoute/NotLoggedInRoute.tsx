@@ -1,3 +1,4 @@
+import css from './NotLoggedInRoute.module.css';
 import { useEffect, useRef } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router';
 import { useAppSelector } from '../../../../redux/hooks';
@@ -22,5 +23,9 @@ export default function NotLoggedInRoute() {
     if (isLoggedIn) navigate(fromPageRef.current || '/');
   }, [isLoggedIn, navigate]);
 
-  return <Outlet />;
+  return (
+    <div className={css.box}>
+      <Outlet />
+    </div>
+  );
 }

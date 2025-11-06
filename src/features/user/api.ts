@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://zoshyt.online/api/users';
-axios.defaults.headers.post['Accept'] = 'application/json'
-axios.defaults.headers.patch['Accept'] = 'application/json'
+axios.defaults.headers.post['Accept'] = 'application/json';
+axios.defaults.headers.patch['Accept'] = 'application/json';
 
 type AuthenticationResponseBody = {
   user_id: number;
@@ -118,6 +118,30 @@ export async function changePassword(
   data: ChangePasswordRequestBody
 ): Promise<void> {
   await axios.patch('/change-password', data);
+}
+
+type ChangeEmailRequestBody = {
+  email: string;
+};
+
+export async function changeEmail(data: ChangeEmailRequestBody): Promise<void> {
+  await axios.patch('/change-email', data);
+}
+
+type ConfirmNewEmailRequestBody = {
+  password: string;
+  code: string;
+};
+
+export async function confirmNewEmail(
+  data: ConfirmNewEmailRequestBody
+): Promise<AuthenticationResponseBody> {
+  const response = await axios.patch<AuthenticationResponseBody>(
+    '/confirm-new-email',
+    data
+  );
+
+  return response.data;
 }
 
 type UpdateDataRequestBody = {

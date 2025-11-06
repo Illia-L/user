@@ -18,6 +18,7 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
         <div className={css.row}>
           {/* <Logo /> */}
           <Nav />
+          
           <UserWidget />
           {/* <MenuButton /> */}
         </div>

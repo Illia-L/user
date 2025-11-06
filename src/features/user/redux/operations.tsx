@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios, { AxiosError } from 'axios';
+import { type AxiosError } from 'axios';
 import type { UserState } from './slice';
 import * as api from '../api';
 import type { ResetPasswordFormValues } from '../components/ResetPasswordForm/ResetPasswordForm';
@@ -7,9 +7,6 @@ import type { SignupFormValues } from '../components/SignupForm/SignupForm';
 import type { LoginFormValues } from '../components/LoginForm/LoginForm';
 import type { EmailConfirmFormValues } from '../components/EmailConfirmForm/EmailConfirmForm';
 import type { UserFormFields } from '../types/fields';
-
-axios.defaults.baseURL = 'https://zoshyt.online/api/users';
-// axios.defaults.withCredentials = true;
 
 type ApiError = {
   appErrorCode: string;
@@ -222,6 +219,42 @@ export const updateUserData = createAsyncThunk(
       const errValue: FormValidationErrorValue<NewUserData> = {
         message: 'Something went wrong, try again later',
       };
+
+      return rejectWithValue(errValue);
+    }
+  }
+);
+
+type ConfirmNewEmailParam = {
+  email: string;
+  password: string;
+  code: string;
+};
+
+export const confirmNewEmail = createAsyncThunk(
+  'user/changeEmail',
+  async (requestData: ConfirmNewEmailParam, { rejectWithValue }) => {
+    try {
+      const responseData = await api.confirmNewEmail(requestData);
+      const { name, email, is_email_verified } = responseData;
+
+      return { name, email, isEmailConfirmed: !!is_email_verified };
+    } catch (err) {
+      const errValue: FormValidationErrorValue<ResetPasswordFormValues> = {
+        message: 'Something went wrong, try again later',
+      };
+      const appErrorCode = extractAppErrorCode(err as AxiosError<ApiErrorData>);
+
+      switch (appErrorCode) {
+        case 'AUTH_INVALID_PASSWORD_FORMAT':
+          errValue.input = 'newPassword';
+          errValue.message = 'Try another new password';
+          break;
+
+        case 'AUTH_INVALID_CODE':
+          errValue.input = 'code';
+          errValue.message = 'Invalid code';
+      }
 
       return rejectWithValue(errValue);
     }
